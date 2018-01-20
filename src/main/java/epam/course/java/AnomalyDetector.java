@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 //Write a generic method to count the number of elements in a collection that have a specific property (for example, odd integers, prime numbers, palindromes).
-public class AnomalyDetector{
+public class  AnomalyDetector{
 
 	public static void main(String[] args) {
 		List<String> strings = Arrays.asList("A nut for a jar of tuna", "Amore, Roma.", "Not a palindrome","Yo, banana boy!");
