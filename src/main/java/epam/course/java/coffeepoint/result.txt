@@ -1,0 +1,17 @@
+*******************************************************************
+{Coffee cream=Item genesis = Cream, price = 2, description = Coffee cream, size = 10, status = Open
+, Sugar stick=Item genesis = Sugar, price = 1, description = Sugar stick, size = 5, status = Open
+, Hot Milk=Item genesis = Milk, price = 5, description = Hot Milk, size = 50, status = Open
+, Hot Chocolade=Item genesis = Chocolade, price = 10, description = Hot Chocolade, size = 50, status = Open
+, Black coffee=Item genesis = Coffee, price = 10, description = Black coffee, size = 100, status = Open
+}
+*******************************************************************
+Order pay = Cash, items = [Item genesis = Coffee, price = 10, description = Black coffee, size = 100, status = Close
+, Item genesis = Milk, price = 5, description = Hot Milk, size = 50, status = Close
+, Item genesis = Sugar, price = 1, description = Sugar stick, size = 5, status = Close
+, Item genesis = Chocolade, price = 10, description = Hot Chocolade, size = 50, status = Close
+] price = 26 status = Open
+*******************************************************************
+epam.course.java.coffeepoint.OutOfItemsException: No more items left
+	at epam.course.java.coffeepoint.CoffeePoint.getItem(CoffeePoint.java:53)
+	at epam.course.java.coffeepoint.Point01.main(Point01.java:21)
