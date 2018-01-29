@@ -5,7 +5,7 @@ select * from PC;
 select * from Laptop;
 select * from Printer;
 
-select  pd.maker,count(pc.module) from product pd
+select  pd.maker,count(pc.model) from product pd
 join PC pc on pd.model=pc.model
 group by pd.maker;
 
