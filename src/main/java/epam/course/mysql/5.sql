@@ -1,6 +1,6 @@
 use labor_sql;
-select name, class, count(name) as cnt from ships
-group by name
+select name, class from ships
+where name=class
 order by name;
 /*5. БД «Кораблі». Перерахувати назви головних кораблів (з
 таблиці Ships). Вивести: name, class. Вихідні дані
