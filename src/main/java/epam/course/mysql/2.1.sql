@@ -7,7 +7,7 @@ select  distinct maker from product
 where maker=any(select maker from product where type="PC") and type="Laptop";
 
 select  distinct maker from product
-where maker=all(select maker from product where type="PC" or type="Laptop");
+where maker=all(select maker from product where type=!"Printer");
 
 /*1. БД «Комп. фірма». Знайдіть виробників, що випускають
 одночасно ПК та ноутбуки. Вивести maker. (використати
