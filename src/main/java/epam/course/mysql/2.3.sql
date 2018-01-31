@@ -5,23 +5,15 @@ select * from PC;
 select * from Laptop;
 select * from Printer;
 
-SELECT makers.maker,
-       pc_cnt.cnt,
-       laptop_cnt.cnt,
-       printer_cnt.cnt
-  FROM (SELECT DISTINCT maker FROM product) makers
-       LEFT JOIN (SELECT COUNT (pc.model) cnt, maker
-                    FROM product pd JOIN PC pc ON pd.model = pc.model) pc_cnt
-          ON makers.maker = pc_cnt.maker
-       LEFT JOIN
-       (SELECT COUNT (l.model) cnt, maker
-          FROM product pd JOIN Laptop l ON pd.model = l.model) laptop_cnt
-          ON makers.maker = laptop_cnt.maker
-       LEFT JOIN
-       (SELECT COUNT (p.model) cnt, maker
-          FROM product pd JOIN Printer p ON pd.model = p.model) printer_cnt
-          ON makers.maker = printer_cnt.maker;
-
+SELECT p.maker,
+         COUNT(PC.model) PC_cnt,
+         COUNT(Laptop.model) Laptop_cnt,
+         COUNT(Printer.model) Printer_cnt
+    FROM product p
+          LEFT JOIN PC ON p.model = PC.model
+          LEFT JOIN Laptop ON p.model = Laptop.model
+          LEFT JOIN Printer ON p.model = Printer.model
+GROUP BY p.maker;
 
 /*3. Для таблиці Product отримати підсумковий набір у вигляді
 таблиці зі стовпцями maker, pc, laptop та printer, в якій для
