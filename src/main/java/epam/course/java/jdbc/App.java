@@ -11,6 +11,7 @@ public class App {
         String insert="insert into battles values(?,?)";
         String selcect="select * from battles;";
         try {
+
             final Connection connection = ConnectionSQL.getConnection("root", "root", "mysql", "localhost", "3306", "labor_sql");
             final PreparedStatement preparedStatement = connection.prepareStatement(insert);
             preparedStatement.setString(1,"TEST00");
@@ -22,6 +23,7 @@ public class App {
                 System.out.println(resultSet.getString(1));
                 System.out.println(resultSet.getString(2));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

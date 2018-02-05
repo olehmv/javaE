@@ -8,6 +8,7 @@ import java.util.Properties;
 
 public class ConnectionSQL {
 
+
     private static String userName;
     private static String password;
     private static String dbms;
