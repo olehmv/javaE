@@ -1,5 +1,5 @@
 use labor_sql;
-select distinct maker from product a
+select distinct maker from product 
  where maker not in(select maker from product where  type="Laptop") and type!="Printer";
 
 
