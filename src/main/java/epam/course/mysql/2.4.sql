@@ -1,8 +1,9 @@
 use labor_sql;
-select p.*,pr.*
-    from product p
-    join printer pr on p.model=pr.model where color!="n"
-    order by price;
+select * from product;
+select distinct maker from product
+where maker in(select maker from product where type="PC")and type="Laptop";
 
-/*4. БД «Комп. фірма». Знайдіть виробників найдешевших
-кольорових принтерів. Вивести: maker, price.
+
+/*4. БД «Комп. фірма». Знайдіть виробників, що випускають
+одночасно ПК та ноутбуки (використати операцію IN).
+Вивести maker.
