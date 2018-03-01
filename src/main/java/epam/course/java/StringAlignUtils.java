@@ -18,8 +18,10 @@ public class StringAlignUtils extends Format {
 		String sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt "
 				+ "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris "
 				+ "nisi ut aliquip ex ea commodo consequat.";
+		
+		String s="  Привіт я тут роблю завдвння по стрінгах";
 
-		StringAlignUtils util = new StringAlignUtils(30, Align.RIGHT);
+		StringAlignUtils util = new StringAlignUtils(5, Align.RIGHT);
 		System.out.println(util.format(sampleText));
 	}
 
@@ -73,8 +75,11 @@ public class StringAlignUtils extends Format {
 		if (str == null)
 			return list;
 		for (int i = 0; i < str.length(); i = i + maxChars) {
+			int length2 = str.length();
 			int endindex = Math.min(i + maxChars, str.length());
-			list.add(str.substring(i, endindex));
+			String s = str.substring(i, endindex);
+			int length = s.length();
+			list.add(s);
 		}
 		return list;
 	}

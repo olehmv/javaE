@@ -1,7 +1,7 @@
 package epam.course.java.workflow;
 
 public enum Status {
-    Close,Open,Inhold
+    Close,Open,Inhold;
     public String toString() {
         switch (this) {
             case Open:
