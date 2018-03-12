@@ -24,6 +24,6 @@ public class Lamda {
         assert mannagersFromLondon.size()==1;
         OptionalDouble average = managers.stream().mapToInt(m -> m.exiriance).average();
         System.out.println(average.getAsDouble());
-        managers.stream().map(m->m.exiriance+1)
+        managers.stream().map(m->m.exiriance+1);
     }
 }
